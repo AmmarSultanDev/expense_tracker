@@ -28,6 +28,18 @@ class _NewExpenseState extends State<NewExpense> {
     });
   }
 
+  void _sumbitExpenseData() {
+    final enteredAmount = double.tryParse(_amountController.text);
+    final amountIsInvalid = enteredAmount == null || enteredAmount <= 0;
+
+    if (_titleController.text.trim().isEmpty ||
+        amountIsInvalid ||
+        _selectedDate == null) {
+      //TODO:Show error message
+      return;
+    }
+  }
+
   @override
   void dispose() {
     _titleController.dispose();
@@ -102,10 +114,7 @@ class _NewExpenseState extends State<NewExpense> {
                   }),
               const Spacer(),
               ElevatedButton(
-                  onPressed: () {
-                    print(_titleController.text);
-                    print(_amountController.text);
-                  },
+                  onPressed: _sumbitExpenseData,
                   child: const Text('Save Expense')),
               const SizedBox(width: 16),
               ElevatedButton(
