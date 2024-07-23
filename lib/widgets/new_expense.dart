@@ -144,7 +144,7 @@ class _NewExpenseState extends State<NewExpense> {
                   onPressed: _sumbitExpenseData,
                   child: const Text('Save Expense')),
               const SizedBox(width: 16),
-              ElevatedButton(
+              TextButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
