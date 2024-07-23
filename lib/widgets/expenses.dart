@@ -24,8 +24,9 @@ class _ExpensesState extends State<Expenses> {
         category: Category.leisure),
   ];
 
-  void _addExpenseOverlay() {
+  void _openAddExpenseOverlay() {
     showModalBottomSheet(
+      isScrollControlled: true,
       context: context,
       builder: (ctx) => NewExpense(onAddExpense: _addExpense),
     );
@@ -44,7 +45,7 @@ class _ExpensesState extends State<Expenses> {
         title: const Text('Flutter ExpenseTracker'),
         actions: [
           IconButton(
-            onPressed: _addExpenseOverlay,
+            onPressed: _openAddExpenseOverlay,
             icon: const Icon(Icons.add),
           ),
         ],
