@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:expense_tracker/widgets/chart/chart_bar.dart';
 import 'package:expense_tracker/models/expense.dart';
 
+/// A widget that displays a chart of expenses.
 class Chart extends StatelessWidget {
   const Chart({super.key, required this.expenses});
 
   final List<Expense> expenses;
 
+  /// Returns a list of expense buckets, where each bucket represents a category of expenses.
   List<ExpenseBucket> get buckets {
     return [
       ExpenseBucket.forCategory(expenses, Category.food),
@@ -17,6 +19,7 @@ class Chart extends StatelessWidget {
     ];
   }
 
+  /// Returns the maximum total expense among all the expense buckets.
   double get maxTotalExpense {
     double maxTotalExpense = 0;
 

@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 
+/// A widget that represents a bar in a chart.
 class ChartBar extends StatelessWidget {
+  /// Creates a [ChartBar] widget.
+  ///
+  /// The [fill] parameter specifies the fill value of the bar.
   const ChartBar({
-    super.key,
+    Key? key,
     required this.fill,
-  });
+  }) : super(key: key);
 
+  /// The fill value of the bar.
   final double fill;
 
   @override
